@@ -1,0 +1,49 @@
+name: Kiểm mốc
+
+on:
+  pull_request:
+    branches:
+      - main
+    types:
+      - opened
+      - synchronize
+      - reopened
+      - closed
+
+jobs:
+  kiem-moc:
+    # Chạy khi:
+    # 1. PR được mở/cập nhật vào nhánh main (để sinh viên kiểm tra ✅/❌ trước khi merge)
+    # 2. PR được đóng VÀ đã được merge thành công vào nhánh main
+    if: github.event.action != 'closed' || github.event.pull_request.merged == true
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout mã nguồn
+        uses: actions/checkout@v4
+        with:
+          # Kiểm tra đúng commit được merge vào main (nếu đã merge) hoặc commit của PR
+          ref: ${{ github.event.pull_request.merge_commit_sha || github.sha }}
+          # fetch-depth: 0 rất quan trọng để lấy toàn bộ lịch sử commit (kiểm tra đủ 4 thành viên commit ở M0)
+          fetch-depth: 0
+
+      - name: Cài đặt Python 3.11
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      - name: Cài đặt Node.js & Mermaid CLI (hỗ trợ kiểm tra sơ đồ từ M2)
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+
+      - name: Cài đặt @mermaid-js/mermaid-cli
+        run: |
+          npm install -g @mermaid-js/mermaid-cli
+        continue-on-error: true
+
+      - name: Chạy script kiểm mốc
+        env:
+          GITHUB_HEAD_REF: ${{ github.head_ref }}
+        run: |
+          python scripts/kiem_moc.py

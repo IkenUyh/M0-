@@ -9,6 +9,13 @@ hoặc xe đang ngoài bãi mà quét ra thêm lần nữa.
 
 ## Thành viên
 
+| STT | MSSV     | Họ và tên          | GitHub                                                  |
+|-----|----------|--------------------|----------------------------------------------------------|
+| 1   | 24520697 | Tô Kiến Huy        |                 |
+| 2   | 24520269 | Huỳnh Cao Đạt      |                  |
+| 3   | 24520842 | Trần Lê Anh Khoa   | [@harutopia0](https://github.com/harutopia0)             |
+| 4   | 24520248 | Trần Thanh Dân |                     |
+
 | Tên | GitHub | Chủ trì mốc |
 |---|---|---|
 | | | M1: Yêu cầu |
