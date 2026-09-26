@@ -25,7 +25,7 @@ hoặc xe đang ngoài bãi mà quét ra thêm lần nữa.
 
 ## URL
 
-- Bản chạy: https://...
+- Bản chạy: https://......
 - Pipeline: xem tab Actions
 
 ## Cấu trúc repo
