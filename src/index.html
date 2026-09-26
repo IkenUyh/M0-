@@ -1,0 +1,68 @@
+<!doctype html>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>SE100 — Quản lý gửi xe KTX</title>
+<style>
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body {
+    font-family: 'Segoe UI', system-ui, sans-serif;
+    background: linear-gradient(135deg, #0f1a2e 0%, #1a2940 50%, #0d3b66 100%);
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #fff;
+  }
+  .card {
+    background: rgba(255,255,255,0.07);
+    border: 1px solid rgba(255,255,255,0.15);
+    border-radius: 20px;
+    padding: 3rem 4rem;
+    text-align: center;
+    backdrop-filter: blur(12px);
+    max-width: 560px;
+    width: 90%;
+  }
+  .badge {
+    display: inline-block;
+    background: rgba(72, 187, 120, 0.2);
+    border: 1px solid rgba(72, 187, 120, 0.4);
+    color: #48bb78;
+    border-radius: 999px;
+    padding: 0.3rem 1rem;
+    font-size: 0.85rem;
+    letter-spacing: 0.05em;
+    margin-bottom: 1.5rem;
+  }
+  h1 {
+    font-size: 2rem;
+    font-weight: 700;
+    margin-bottom: 0.5rem;
+    background: linear-gradient(90deg, #48bb78, #63b3ed);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+  .subtitle {
+    color: rgba(255,255,255,0.55);
+    font-size: 1rem;
+    margin-bottom: 2rem;
+    line-height: 1.6;
+  }
+  .commit-box {
+    background: rgba(0,0,0,0.25);
+    border-radius: 10px;
+    padding: 0.75rem 1.25rem;
+    font-size: 0.8rem;
+    color: rgba(255,255,255,0.5);
+    font-family: monospace;
+  }
+  .commit-box code { color: #68d391; }
+</style>
+<div class="card">
+  <div class="badge">SE100 · UIT · 2026</div>
+  <h1>Nhóm XX — Quản lý gửi xe KTX</h1>
+  <p class="subtitle">Hệ thống quản lý đăng ký xe, quét thẻ ra/vào cổng,<br>tra cứu phí và thống kê xe tại ký túc xá</p>
+  <div class="commit-box">
+    Chạy từ commit: <code id="c">…</code>
+  </div>
+</div>

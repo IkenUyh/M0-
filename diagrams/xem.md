@@ -1,0 +1,98 @@
+# Xem sơ đồ lớp
+
+```mermaid
+classDiagram
+  class User {
+    <<abstract>>
+    #String id
+    #String fullName
+    #String phoneNumber
+    +getId() String
+    +getFullName() String
+  }
+  class Student {
+    -String studentCode
+    -String roomNumber
+    +registerVehicle(v Vehicle) Card
+    +viewParkingFee() decimal
+    +viewPaymentHistory() List
+  }
+  class SecurityGuard {
+    -String employeeId
+    -String shift
+    +scanCard(c Card, d GateDirection) Result
+    +createIncidentReport() Report
+  }
+  class Manager {
+    -String department
+    +generateVehicleStats() Report
+    +reviewIncidentReport(id String)
+  }
+  class Vehicle {
+    -String licensePlate
+    -String vehicleType
+    -String ownerStudentId
+    -VehicleStatus status
+    +updateStatus(s VehicleStatus)
+    +getStatus() VehicleStatus
+    +getLicensePlate() String
+  }
+  class ParkingCard {
+    -String cardId
+    -String licensePlate
+    -DateTime issueDate
+    -DateTime expiryDate
+    -bool isActive
+    +isValid() bool
+    +deactivate() void
+  }
+  class ParkingRecord {
+    -String recordId
+    -String cardId
+    -String licensePlate
+    -DateTime timestamp
+    -GateDirection direction
+    -bool isSuccessful
+    -String note
+  }
+  class PaymentTransaction {
+    -String transactionId
+    -String studentId
+    -decimal amount
+    -DateTime paymentDate
+    -PaymentStatus status
+  }
+  class IncidentReport {
+    -String reportId
+    -String guardId
+    -String licensePlate
+    -IncidentType type
+    -String description
+    -DateTime reportedAt
+  }
+  class VehicleStatus {
+    <<enumeration>>
+    +InParking
+    +OutParking
+  }
+  class GateDirection {
+    <<enumeration>>
+    +In
+    +Out
+  }
+  class IncidentType {
+    <<enumeration>>
+    +Lost
+    +Damaged
+    +RuleViolation
+  }
+  User <|-- Student
+  User <|-- SecurityGuard
+  User <|-- Manager
+  Student "1" --> "1..*" Vehicle : owns
+  Vehicle "1" --> "1" ParkingCard : assigned to
+  ParkingCard "1" --> "0..*" ParkingRecord : logs
+  Student "1" --> "0..*" PaymentTransaction : pays
+  SecurityGuard "1" --> "0..*" IncidentReport : creates
+  Manager "1" --> "0..*" IncidentReport : reviews
+```
