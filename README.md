@@ -12,7 +12,7 @@ hoặc xe đang ngoài bãi mà quét ra thêm lần nữa.
 | STT | MSSV     | Họ và tên          | GitHub                                                  |
 |-----|----------|--------------------|----------------------------------------------------------|
 | 1   | 24520697 | Tô Kiến Huy        |                 |
-| 2   | 24520269 | Huỳnh Cao Đạt      |                  |
+| 2   | 24520269 | Huỳnh Cao Đạt      | [@estellra](https://github.com/estellra)                 |               
 | 3   | 24520842 | Trần Lê Anh Khoa   | [@harutopia0](https://github.com/harutopia0)             |
 | 4   | 24520248 | Trần Thanh Dân |                     |
 
